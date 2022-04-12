@@ -4,10 +4,6 @@ public class TicTacToeBoard {
 	public TicTacToeBoard(String board) {
 		this.str=board.toLowerCase(); 
 	}
-//	public static void main(String args[]) {
-//		TicTacToeBoard answer=new TicTacToeBoard("xooxxooxo");
-//		System.out.println(answer.evaluate());
-//	}
 	public Evaluation evaluate() {
 		int i,j;
 		if(str.length()!=9){

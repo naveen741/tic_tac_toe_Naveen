@@ -11,25 +11,25 @@ public class TicTacToeTest {
     @Test
     public void simpleNoWinnerBoard() throws Exception {
     	TicTacToeBoard answer=new TicTacToeBoard("O...X.X..");
-        assertEquals(Evaluation.NoWinner, answer.evaluate());
+        assertEquals(Evaluation.NOWINNER, answer.evaluate());
         TicTacToeBoard answer1=new TicTacToeBoard("XXX...oo.");
-        assertEquals(Evaluation.Xwins, answer1.evaluate());
+        assertEquals(Evaluation.XWINS, answer1.evaluate());
         TicTacToeBoard answer2=new TicTacToeBoard("...Xxx.oo");
-        assertEquals(Evaluation.Xwins, answer2.evaluate());
+        assertEquals(Evaluation.XWINS, answer2.evaluate());
         TicTacToeBoard answer3=new TicTacToeBoard("oo....xxx");
-        assertEquals(Evaluation.Xwins,answer3.evaluate());
+        assertEquals(Evaluation.XWINS,answer3.evaluate());
         TicTacToeBoard answer4=new TicTacToeBoard("x..x..xoo");
-        assertEquals(Evaluation.Xwins, answer4.evaluate());
+        assertEquals(Evaluation.XWINS, answer4.evaluate());
         TicTacToeBoard answer5=new TicTacToeBoard(".x..xoox.");
-        assertEquals(Evaluation.Xwins,answer5.evaluate());
+        assertEquals(Evaluation.XWINS,answer5.evaluate());
         TicTacToeBoard answer6=new TicTacToeBoard("..xoox..x");
-        assertEquals(Evaluation.Xwins, answer6.evaluate());
+        assertEquals(Evaluation.XWINS, answer6.evaluate());
         TicTacToeBoard answer7=new TicTacToeBoard("x...x.oox");
-        assertEquals(Evaluation.Xwins, answer7.evaluate());
+        assertEquals(Evaluation.XWINS, answer7.evaluate());
         TicTacToeBoard answer8=new TicTacToeBoard("..x.x.xoo");
-        assertEquals(Evaluation.Xwins, answer8.evaluate());
+        assertEquals(Evaluation.XWINS, answer8.evaluate());
         TicTacToeBoard answer10=new TicTacToeBoard("oxooxooxo");
-        assertEquals(Evaluation.UnreachableState, answer10.evaluate());
+        assertEquals(Evaluation.UNREACHABLESTATE, answer10.evaluate());
 
     }
 }

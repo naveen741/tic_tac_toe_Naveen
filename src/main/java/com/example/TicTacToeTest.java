@@ -28,8 +28,6 @@ public class TicTacToeTest {
         assertEquals(Evaluation.Xwins, answer7.evaluate());
         TicTacToeBoard answer8=new TicTacToeBoard("..x.x.xoo");
         assertEquals(Evaluation.Xwins, answer8.evaluate());
-        /*TicTacToeBoard answer9=new TicTacToeBoard("Oooxxx...");
-        assertEquals(Evaluation.UnreachableState, answer9.evaluate());*/
         TicTacToeBoard answer10=new TicTacToeBoard("oxooxooxo");
         assertEquals(Evaluation.UnreachableState, answer10.evaluate());
 

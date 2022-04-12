@@ -5,11 +5,13 @@ public class TicTacToeBoard {
 		this.str=board.toLowerCase(); 
 	}
 	public Evaluation evaluate() {
-		int i,j;
+		int i;
+		int j;
 		if(str.length()!=9){
 			return Evaluation.UnreachableState;
 		}
-		int xCount=0,oCount=0;
+		int xCount=0;
+		int oCount=0;
 		for( i=0;i<str.length();i++) {
 			if(str.charAt(i)=='x')
 				xCount++;

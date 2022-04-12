@@ -4,9 +4,12 @@ public class TicTacToeBoard {
 	public TicTacToeBoard(String board) {
 		this.str=board.toLowerCase(); 
 	}
+//	public static void main(String args[]) {
+//		TicTacToeBoard answer=new TicTacToeBoard("xooxxooxo");
+//		System.out.println(answer.evaluate());
+//	}
 	public Evaluation evaluate() {
 		int i;
-		int j;
 		if(str.length()!=9){
 			return Evaluation.UnreachableState;
 		}
@@ -20,7 +23,16 @@ public class TicTacToeBoard {
 		}
 		if(Math.abs(xCount-oCount)>1)
 			return Evaluation.UnreachableState;
-		for( j=0;j<str.length();j+=3){
+		if(rowCheck() != null)
+			return rowCheck();
+		else if(colCheck() != null)
+			return colCheck();
+		else if(diaCheck() != null)
+			return diaCheck();
+		return Evaluation.NoWinner;
+	}
+	public Evaluation rowCheck() {
+		for( int j=0;j<str.length();j+=3){
 			if(str.charAt(j)!='.'&&(str.charAt(j)==str.charAt(j+1)&&str.charAt(j+1)==str.charAt(j+2))) {
 				if(str.charAt(j)=='x') 
 					return Evaluation.Xwins;
@@ -28,7 +40,10 @@ public class TicTacToeBoard {
 					return Evaluation.Owins;
 			}
 		}
-		for(j=0;j<3;j++){
+		return null;
+	}
+	public Evaluation colCheck() {
+		for(int j=0;j<3;j++){
 			if(str.charAt(j)!='.'&&(str.charAt(j)==str.charAt(j+3)&&str.charAt(j+3)==str.charAt(j+6))){
 				if(str.charAt(j)=='x') 
 					return Evaluation.Xwins;
@@ -36,6 +51,10 @@ public class TicTacToeBoard {
 					return Evaluation.Owins;
 			}
 		}
+		return null;
+		
+	}
+	public Evaluation diaCheck() {
 		if(str.charAt(0)!='.'&&(str.charAt(0)==str.charAt(4)&&str.charAt(4)==str.charAt(8))){
 			if(str.charAt(0)=='x') 
 				return Evaluation.Xwins;
@@ -48,6 +67,7 @@ public class TicTacToeBoard {
 			else	
 				return Evaluation.Owins;
 		}
-		return Evaluation.NoWinner;
+		return null;
+		
 	}
 }
